@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Tip</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    .tip {
+      font-size: 1.2rem;
+      padding: 1rem;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="tip" id="tip"></div>
+  <button onclick="showTip()">🔄 Show Another Tip</button>
+
+  <script>
+    const tips = [
+      "💡 Don't forget to put a date in document names!",
+      "📌 Tag your Outline pages for easier search later.",
+      "🧭 Use keyboard shortcuts in Outline: 'Cmd + K' to search anything.",
+      "✅ Make sure to update the last updated date on Otis documents when you modify them.",
+    ];
+
+    function showTip() {
+      const randomIndex = Math.floor(Math.random() * tips.length);
+      document.getElementById("tip").innerText = tips[randomIndex];
+    }
+
+    // Show one tip on page load
+    window.onload = showTip;
+  </script>
+</body>
+</html>
